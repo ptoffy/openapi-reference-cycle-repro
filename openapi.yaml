@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Recursive Reference & Multipart Example
+  version: 1.0.0
+paths:
+  /upload:
+    post:
+      summary: Upload a file with metadata
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/Node"
+      responses:
+        '200':
+          description: Upload successful
+components:
+  schemas:
+    Node:
+      type: object
+      properties:
+        id:
+          type: string
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'

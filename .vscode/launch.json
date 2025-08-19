@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "name": "Debug OpenAPI Generator",
+            "program": "${workspaceFolder:openapi-reference-cycle-repro}/.build/debug/swift-openapi-generator",
+            "args": [
+                "generate",
+                "--mode", "types",
+                "--mode", "client",
+                "openapi.yaml"
+            ],
+            "cwd": "${workspaceFolder:openapi-reference-cycle-repro}",
+            "preLaunchTask": "swift: Build Debug openapi-reference-cycle-repro"
+        }
+    ]
+}
